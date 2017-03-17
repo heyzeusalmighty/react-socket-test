@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
+import { BrowserRouter as Router, Link, browserHistory } from 'react-router-dom';
 
 import  Header from './parts/Header';
+import routes from './routes';
+// import Main from './Main';
+// import Audience from './Audience';
+// import Speaker from './Speaker';
+// import Board from './Board';
 
 class Main extends Component {
 
@@ -15,6 +21,8 @@ class Main extends Component {
         this.connect = this.connect.bind(this);
         this.disconnect = this.disconnect.bind(this);
         this.welcome = this.welcome.bind(this);
+
+        console.log('from main, here is routes', routes);
     }
 
     componentWillMount() {
@@ -40,12 +48,22 @@ class Main extends Component {
     }
 
     render() {
+
         return (
             <div className="container">
                 <Header title={ this.state.title } status={ this.state.status } />
-                { this.props.children }
+                <p> cool man </p>
+                <Router history={browserHistory} routes={routes} />
             </div>
         )
+
+        // return (
+        //     <div className="container">
+        //         <Header title={ this.state.title } status={ this.state.status } />
+        //         { this.props.children }
+        //     </div>
+        // )
+
     }
 }
 
