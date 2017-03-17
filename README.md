@@ -1,3 +1,9 @@
 # react-socket-test
 
 This is a sample project to play around with React and Socket.io
+
+## getting started
+1. `git clone ...`
+2. `npm install`
+3. Install webpack globally => `sudo npm install webpack -g`
+4. `npm start`
